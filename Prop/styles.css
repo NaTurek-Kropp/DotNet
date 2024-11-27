@@ -1,29 +1,29 @@
-/* Basic reset for margin and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #121212; /* Dark background */
-    color: #E0E0E0; /* Light text color for readability */
+    background-color: #121212; 
+    color: #E0E0E0;
     padding: 20px;
 }
 
-/* Header styling */
 header {
-    background-color: #1E1E1E; /* Dark header */
-    color: #E0E0E0; /* Light text */
+    background-color: #1E1E1E;
+    color: #366ab8;
     padding: 20px;
     text-align: center;
     border-radius: 5px;
 }
 
-/* Navigation styling */
+header h1 {
+    font-size: 2rem;
+}
+
 nav {
     margin: 20px 0;
 }
@@ -39,7 +39,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #366ab8; /* Contrast color for links */
+    color: #366ab8;
     text-decoration: none;
     font-weight: bold;
 }
@@ -48,7 +48,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main section styling */
 section {
     margin-bottom: 20px;
 }
@@ -56,13 +55,12 @@ section {
 section h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #366ab8; /* Using the contrast color for section titles */
+    color: #366ab8;
 }
 
-/* Code block styling */
 pre {
-    background-color: #333; /* Dark background for code blocks */
-    color: #C1C1C1; /* Light gray text in code blocks */
+    background-color: #333; 
+    color: #C1C1C1;
     padding: 15px;
     border-radius: 5px;
     overflow-x: auto;
@@ -70,11 +68,10 @@ pre {
     word-wrap: break-word;
 }
 
-/* Back button styling */
 .back-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #366ab8; /* Contrast color for the back button */
+    background-color: #366ab8;
     color: #121212;
     text-decoration: none;
     border-radius: 5px;
@@ -83,15 +80,14 @@ pre {
 }
 
 .back-button:hover {
-    background-color: #274f80; /* Darker shade of the contrast color on hover */
+    background-color: #366ab8;
 }
 
-/* Footer styling */
 footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px;
-    background-color: #1E1E1E; /* Dark footer */
-    color: #E0E0E0; /* Light text */
+    background-color: #1E1E1E; 
+    color: #E0E0E0;
     border-radius: 5px;
 }

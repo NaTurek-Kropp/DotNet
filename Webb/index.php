@@ -1,11 +1,8 @@
 <?php
-include('db.php');
+include('db.php'); // Include database connection
 
-// Fetch topics along with their category names
-$sql = "SELECT t.TematID, t.Nazwa, t.Opis, k.Nazwa AS KategoriaNazwa 
-        FROM Tematy t 
-        LEFT JOIN Kategorie k ON t.KategoriaID = k.KategoriaID";
-
+// Fetch categories from database
+$sql = "SELECT * FROM Kategorie";
 $result = $conn->query($sql);
 ?>
 
@@ -18,20 +15,27 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Programowanie w C# - Dokumentacja</h1>
-    <ul>
-        <?php
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo "<li><a href='temat.php?id=" . $row['TematID'] . "'>" . $row['Nazwa'] . "</a> - Kategoria: " . $row['KategoriaNazwa'] . "</li>";
+    <header>
+        <h1>Programowanie w C#</h1>
+        <p>Co nie co o języku</p>
+    </header>
+
+    <nav>
+        <ul>
+            <?php
+            if ($result->num_rows > 0) {
+                while($category = $result->fetch_assoc()) {
+                    echo "<li><a href='category.php?id=" . $category['KategoriaID'] . "'>" . $category['KategoriaNazwa'] . "</a></li>";
+                }
+            } else {
+                echo "<li>Brak dostępnych kategorii.</li>";
             }
-        } else {
-            echo "<li>Brak dostępnych tematów.</li>";
-        }
-        ?>
-    </ul>
+            ?>
+        </ul>
+    </nav>
+
+    <footer>
+        <p>-----</p>
+    </footer>
 </body>
 </html>
-<?php
-$conn->close();
-?>
